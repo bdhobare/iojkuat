@@ -1,4 +1,59 @@
 <resources>
     <string name="app_name">iojkuat</string>
     <string name="title_activity_multi_window">MultiWindow</string>
+
+    <string name="activity_description_basic">This Activity was launched in a new task without any
+        additional flags or options.
+    </string>
+    <string name="activity_description_unresizable">This activity is set as unresizable in the
+        AndroidManifest. This is done by setting the <i>resizeableActivity</i> property to
+        <i>false</i> for this activity.
+    </string>
+    <string name="activity_adjacent_description">This activity was launched with the flag
+        <b>Intent.FLAG_ACTIVITY_LAUNCH_ADJACENT</b>.\n\nIf possible, it has been launched into the
+        adjacent area from the activity that started it.\nThis is only a hint to the system. For
+        example - if the application is not in split-screen mode, it will be launched full-screen.
+        If it is launched in the same task as the initial Activity, it will retain its activity
+        properties and its location.
+    </string>
+    <string name="activity_custom_description">This activity handles configuration changes
+        itself.\n\nIn the AndroidManifest, this activity has been configured to receive callbacks
+        for <b>screenSize|smallestScreenSize|screenLayout|orientation</b>
+        changes.\nTry resizing this activity to different sizes to see which configuration
+        properties change.
+    </string>
+    <string name="activity_bounds_description">This activity has been launched with a launch bounds
+        set in its intent. The bounds define the area into which the activity should be launched.
+        \n\nNote that this flag only applies in free-form mode.
+    </string>
+    <string name="activity_minimum_description">This activity has a minimum size.\nIt was launched
+        into the top/end corner with a a default size of 750dp by 500dp, with a minimum size of 750dp
+        as defined in its <b>layout attribute in the AndroidManifest definition</b>.
+        \n\nNote that this Activity was launched in a different task, otherwise the properties from
+        the Activity that launched this one would have been applied.
+    </string>
+
+
+    <string name="add_a_notification">Add a notification</string>
+    <string name="active_notifications">Active Notifications: %1$s</string>
+    <string name="update_notification_count">Update count</string>
+    <string name="sample_notification_content">This is a sample notification.</string>
+    <string name="sample_notification_summary_content">There are %s ActiveNotifications.</string>
+
+    <string name="intro_message">
+        <![CDATA[
+
+
+            Notifications can now be grouped in Android N. Since Android M, the
+            NotificationManager can tell you how many notifications your application
+            is currently showing. This sample demonstrates how to use these APIs
+            together for a nicer user experience when an app may have multiple
+            notifications. To get started, press the "add a notification" button.
+            If you add more than one notification a notification summary will be
+            added. When a notification is being canceled, the count gets updated
+            via a PendingIntent.
+
+
+        ]]>
+    </string>
 </resources>

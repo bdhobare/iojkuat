@@ -18,10 +18,57 @@
             </intent-filter>
         </activity>
         <activity android:name=".Constraint" />
+        <!-- This Activity cannot be resized and is always displayed full screen. -->
         <activity
-            android:name=".MultiWindow"
-            android:label="@string/title_activity_multi_window"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:name=".multiwindow.UnresizableActivity"
+            android:resizeableActivity="false"
+            android:taskAffinity="" />
+        !-- This Activity has a default size (750x500dp) with a minimum size
+        (500dp at its shortest side). It is launched in the top/end (top/right) corner by default.
+        These attributes are defined in the 'layout' tag within an Activity definition. -->
+        <activity
+            android:name=".multiwindow.MinimumSizeActivity"
+            android:launchMode="singleInstance"
+            android:taskAffinity="">
+            <layout
+                android:defaultHeight="500dp"
+                android:defaultWidth="750dp"
+                android:gravity="top|end"
+                android:minimalHeight="500dp"
+                android:minimalWidth="500dp" />
+        </activity>
+        <!--
+          In split-screen mode, this Activity is launched adjacent to another Activity. This is
+          controlled via a flag set in the intent that launches this Activity.
+        -->
+        <activity
+            android:name=".multiwindow.AdjacentActivity"
+            android:taskAffinity="" />
+
+        <!-- This Activity is launched within an area defined in its launch intent. -->
+        <activity
+            android:name=".multiwindow.LaunchBoundsActivity"
+            android:taskAffinity="" />
+
+        <!--
+        This activity handles all configuration changes itself.
+        Callbacks for configuration changes are received in 'onConfigurationChanged'.
+        -->
+        <activity
+            android:name=".multiwindow.CustomConfigurationChangeActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
+            android:launchMode="singleInstance"
+            android:taskAffinity="" />
+
+        <!-- This Activity is launched in a new task without any special flags or settings. -->
+        <activity
+            android:name=".multiwindow.BasicActivity"
+            android:launchMode="singleInstance"
+            android:taskAffinity="" />
+        <activity android:name=".notification.NotificationActivity"></activity>
+        <activity android:name=".notification.ActiveNotificationsActivity"
+            android:label="@string/app_name">
+        </activity>
     </application>
 
 </manifest>
