@@ -11,12 +11,11 @@ public class ScopedActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_scoped);
+        setContentView(R.layout.activity_notification);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.container, ScopedDirectoryAccessFragment.newInstance(), FRAGMENT_TAG)
                     .commit();
         }
-
     }
 }
